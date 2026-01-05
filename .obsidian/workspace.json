@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "5e733c76b2dfdaf6",
+    "type": "split",
+    "children": [
+      {
+        "id": "c9e4501d8d6ed114",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c78084d143730932",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "3 - מסחר תאוריה/images/Pasted image 20260105222411.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20260105222411"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2d09f13ed1910cc1",
+    "type": "split",
+    "children": [
+      {
+        "id": "90c2ee80b86fbca9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa161bab9b051a92",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "55d18e53994da2ba",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "67896d0a88de34c5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c9c04ac75604c57d",
+    "type": "split",
+    "children": [
+      {
+        "id": "88cc214ddcf653f8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c5c949f331c90f72",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "3 - מסחר תאוריה/images/Pasted image 20260105222411.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Pasted image 20260105222411"
+            }
+          },
+          {
+            "id": "9fafdc95566f866d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "3 - מסחר תאוריה/images/Pasted image 20260105222411.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Pasted image 20260105222411"
+            }
+          },
+          {
+            "id": "b9fe04aa8bcbb939",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0351068824ba50c5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f68ab47825ba6f6f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "3 - מסחר תאוריה/images/Pasted image 20260105222411.png",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Pasted image 20260105222411"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "fa161bab9b051a92",
+  "lastOpenFiles": [
+    "3 - מסחר תאוריה/images/Pasted image 20260105222153.png",
+    "3 - מסחר תאוריה/images/Pasted image 20260105214724.png",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/3 - דוחות כספיים.md",
+    "מניות/3 - מסחר תאוריה/2 - גרף תוך יומי/4 - פתיחת המסחר.md",
+    "3 - מסחר תאוריה/images/Pasted image 20260105221853.png",
+    "3 - מסחר תאוריה/images/Pasted image 20260105221420.png",
+    "3 - מסחר תאוריה/images/Pasted image 20260105221825.png",
+    "3 - מסחר תאוריה/images/Pasted image 20260105221728.png",
+    "3 - מסחר תאוריה/images/Pasted image 20260105221642.png",
+    "3 - מסחר תאוריה/images/Pasted image 20260105221555.png",
+    "3 - מסחר תאוריה/images/Pasted image 20260105220617.png",
+    "3 - מסחר תאוריה/images/Pasted image 20260105221336.png",
+    "3 - מסחר תאוריה/images/Pasted image 20260105221325.png",
+    "3 - מסחר תאוריה/2 - גרף תוך יומי/2 - נקודות חשובות.md",
+    "3 - מסחר תאוריה/1 - היום שאחרי/2 - הרשימה הרחבה.md",
+    "3 - מסחר תאוריה/1 - היום שאחרי/1 - הקדמה.md",
+    "3 - מסחר תאוריה/2 - גרף תוך יומי/4 - פתיחת המסחר.md",
+    "3 - מסחר תאוריה/2 - גרף תוך יומי/6 - החלק השני.md",
+    "3 - מסחר תאוריה/2 - גרף תוך יומי/5 - החלק הראשון.md",
+    "3 - מסחר תאוריה/2 - גרף תוך יומי/1 - הקדמה.md",
+    "3 - מסחר תאוריה/2 - גרף תוך יומי/3 - שעות המסחר.md",
+    "3 - מסחר תאוריה/Untitled.md",
+    "3 - מסחר תאוריה/images",
+    "3 - מסחר תאוריה/6 - פרה ואפטר מרקט",
+    "3 - מסחר תאוריה/5 - מחזורים",
+    "3 - מסחר תאוריה/4 - טעינת אנרגיה",
+    "3 - מסחר תאוריה/1 - היום שאחרי",
+    "3 - מסחר תאוריה/2 - גרף תוך יומי",
+    "3 - מסחר תאוריה/3 - רמות קריטיות",
+    "3 - מסחר תאוריה",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/6 - אירועי צד ג.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/8 - הנפקת מניות.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/9 - הנפקה פרטית.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/7 - העלאת והורדת המלצה.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/5 - שתפים והסכמים.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/4 - השקות ועדכונים.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/18 - אסונות גלובליים.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/2 - זרזים פונדמנטליים.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/20 - תוסף PEARLS.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/19 - סיכום.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/16 - חדשות מסוכנות.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/17 - נתונים מאקרו כלכליים.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/15 - ניסויים קליניים.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/14 - חדשות פארמה.md",
+    "2 - איתור מניה/Untitled 1",
+    "2 - איתור מניה/images"
+  ]
+}
