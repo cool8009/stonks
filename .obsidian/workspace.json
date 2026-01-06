@@ -11,12 +11,14 @@
             "id": "c78084d143730932",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "3 - מסחר תאוריה/images/Pasted image 20260105222411.png"
+                "file": "2 - איתור מניה/5 - דיוק הרשימה/3 - חוק היום השלישי.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260105222411"
+              "icon": "lucide-file",
+              "title": "3 - חוק היום השלישי"
             }
           }
         ]
@@ -92,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "3 - מסחר תאוריה/images/Pasted image 20260105222411.png",
+                "file": "2 - איתור מניה/5 - דיוק הרשימה/3 - חוק היום השלישי.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Pasted image 20260105222411"
+              "title": "Backlinks for 3 - חוק היום השלישי"
             }
           },
           {
@@ -111,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "3 - מסחר תאוריה/images/Pasted image 20260105222411.png",
+                "file": "2 - איתור מניה/5 - דיוק הרשימה/3 - חוק היום השלישי.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Pasted image 20260105222411"
+              "title": "Outgoing links from 3 - חוק היום השלישי"
             }
           },
           {
@@ -154,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "3 - מסחר תאוריה/images/Pasted image 20260105222411.png",
+                "file": "2 - איתור מניה/5 - דיוק הרשימה/3 - חוק היום השלישי.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Pasted image 20260105222411"
+              "title": "Outline of 3 - חוק היום השלישי"
             }
           }
         ]
@@ -181,8 +183,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "fa161bab9b051a92",
+  "active": "c78084d143730932",
   "lastOpenFiles": [
+    "2 - איתור מניה/1 - תעודת הזהות של המניה/5 - פלואוט.md",
+    "2 - איתור מניה/4 - זרזים פונדמנטלים/19 - סיכום.md",
+    "3 - מסחר תאוריה/images/Pasted image 20260105222411.png",
     "3 - מסחר תאוריה/images/Pasted image 20260105222153.png",
     "3 - מסחר תאוריה/images/Pasted image 20260105214724.png",
     "2 - איתור מניה/4 - זרזים פונדמנטלים/3 - דוחות כספיים.md",
@@ -194,8 +199,6 @@
     "3 - מסחר תאוריה/images/Pasted image 20260105221642.png",
     "3 - מסחר תאוריה/images/Pasted image 20260105221555.png",
     "3 - מסחר תאוריה/images/Pasted image 20260105220617.png",
-    "3 - מסחר תאוריה/images/Pasted image 20260105221336.png",
-    "3 - מסחר תאוריה/images/Pasted image 20260105221325.png",
     "3 - מסחר תאוריה/2 - גרף תוך יומי/2 - נקודות חשובות.md",
     "3 - מסחר תאוריה/1 - היום שאחרי/2 - הרשימה הרחבה.md",
     "3 - מסחר תאוריה/1 - היום שאחרי/1 - הקדמה.md",
@@ -222,7 +225,6 @@
     "2 - איתור מניה/4 - זרזים פונדמנטלים/18 - אסונות גלובליים.md",
     "2 - איתור מניה/4 - זרזים פונדמנטלים/2 - זרזים פונדמנטליים.md",
     "2 - איתור מניה/4 - זרזים פונדמנטלים/20 - תוסף PEARLS.md",
-    "2 - איתור מניה/4 - זרזים פונדמנטלים/19 - סיכום.md",
     "2 - איתור מניה/4 - זרזים פונדמנטלים/16 - חדשות מסוכנות.md",
     "2 - איתור מניה/4 - זרזים פונדמנטלים/17 - נתונים מאקרו כלכליים.md",
     "2 - איתור מניה/4 - זרזים פונדמנטלים/15 - ניסויים קליניים.md",
