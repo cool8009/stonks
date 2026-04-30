@@ -19,7 +19,8 @@ EXCLUDED_FILES = {
 }
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"}
 IMAGE_EMBED_RE = re.compile(r"!\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
-MARKDOWN_IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^)]+)\)")
+MARKDOWN_IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
+GENERIC_PASTED_IMAGE_ALT_RE = re.compile(r"^Pasted image \d{14}$", re.IGNORECASE)
 
 
 @dataclass
@@ -50,7 +51,30 @@ def in_scope(path: Path) -> bool:
     return True
 
 
-def markdown_notes() -> list[Path]:
+def markdown_notes(paths: list[str] | None = None) -> list[Path]:
+    if paths:
+        notes: set[Path] = set()
+        for raw_path in paths:
+            scoped_path = (REPO_ROOT / raw_path).resolve()
+            try:
+                scoped_path.relative_to(REPO_ROOT.resolve())
+            except ValueError:
+                raise ValueError(f"path escapes repo root: {raw_path}") from None
+
+            if scoped_path.is_file():
+                candidates = [scoped_path] if scoped_path.suffix.lower() == ".md" else []
+            elif scoped_path.is_dir():
+                candidates = sorted(scoped_path.rglob("*.md"))
+            else:
+                raise ValueError(f"path does not exist: {raw_path}")
+
+            notes.update(
+                path
+                for path in candidates
+                if path.is_file() and in_scope(path)
+            )
+        return sorted(notes)
+
     return sorted(
         path
         for path in REPO_ROOT.rglob("*.md")
@@ -81,6 +105,7 @@ def note_display_title(note: Path) -> str:
 
 
 def clean_alt_text(text: str) -> str:
+    text = IMAGE_EMBED_RE.sub("", text)
     text = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", text)
     text = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", r"\2", text)
     text = re.sub(r"\[\[([^\]]+)\]\]", lambda m: Path(m.group(1).split("|", 1)[0]).stem, text)
@@ -145,7 +170,9 @@ def resolve_image_target(
     all_images: list[Path],
     by_name: dict[str, list[Path]],
 ) -> list[Path]:
-    normalized = raw_target.replace("\\", "/").strip()
+    normalized = unquote(raw_target).replace("\\", "/").strip()
+    if normalized.startswith("<") and normalized.endswith(">"):
+        normalized = normalized[1:-1]
     path_like = Path(normalized)
 
     if path_like.suffix:
@@ -160,6 +187,84 @@ def resolve_image_target(
 
     stem = path_like.name.lower()
     return [image for image in all_images if image.stem.lower() == stem]
+
+
+def external_target(target: str) -> bool:
+    return bool(re.match(r"^[a-z][a-z0-9+.-]*://", target, flags=re.IGNORECASE))
+
+
+def local_markdown_target(target: str) -> str:
+    target = target.strip()
+    if target.startswith("<") and target.endswith(">"):
+        target = target[1:-1]
+    return unquote(target)
+
+
+def existing_markdown_target(note: Path, target: str) -> Path | None:
+    decoded = local_markdown_target(target)
+    candidate = (note.parent / decoded).resolve()
+    try:
+        candidate.relative_to(REPO_ROOT.resolve())
+    except ValueError:
+        return None
+
+    if candidate.is_file() and candidate.suffix.lower() in IMAGE_EXTENSIONS:
+        return candidate
+    return None
+
+
+def resolve_markdown_target(
+    note: Path,
+    target: str,
+    all_images: list[Path],
+    by_name: dict[str, list[Path]],
+) -> Path | None:
+    existing = existing_markdown_target(note, target)
+    if existing:
+        return existing
+
+    candidates = resolve_image_target(local_markdown_target(target), all_images, by_name)
+    if len(candidates) == 1:
+        return candidates[0]
+    return None
+
+
+def generic_pasted_image_alt(alt_text: str) -> bool:
+    return bool(GENERIC_PASTED_IMAGE_ALT_RE.fullmatch(alt_text.strip()))
+
+
+def rewrite_markdown_images(
+    line: str,
+    note: Path,
+    all_images: list[Path],
+    by_name: dict[str, list[Path]],
+) -> tuple[str, bool]:
+    changed = False
+
+    def replace(match: re.Match[str]) -> str:
+        nonlocal changed
+        alt_text = match.group(1)
+        target = match.group(2).strip()
+
+        if external_target(target):
+            return match.group(0)
+
+        image_path = resolve_markdown_target(note, target, all_images, by_name)
+        if not image_path:
+            return match.group(0)
+
+        relative_path = Path(os.path.relpath(image_path, start=note.parent))
+        new_target = encode_relative_path(relative_path)
+        new_alt_text = alt_text
+        if generic_pasted_image_alt(alt_text):
+            new_alt_text = image_path.stem
+
+        replacement = f"![{new_alt_text}]({new_target})"
+        if replacement != match.group(0):
+            changed = True
+        return replacement
+
+    return MARKDOWN_IMAGE_RE.sub(replace, line), changed
 
 
 def normalize_text_fragment(text: str) -> str:
@@ -207,11 +312,11 @@ def render_line(
 def validate_markdown_images(note: Path, text: str) -> list[str]:
     errors: list[str] = []
     for match in MARKDOWN_IMAGE_RE.finditer(text):
-        target = match.group(1).strip()
-        if re.match(r"^[a-z]+://", target, flags=re.IGNORECASE):
+        target = match.group(2).strip()
+        if external_target(target):
             continue
 
-        decoded = unquote(target)
+        decoded = local_markdown_target(target)
         candidate = (note.parent / decoded).resolve()
         try:
             candidate.relative_to(REPO_ROOT.resolve())
@@ -240,7 +345,17 @@ def transform_note(
     for index, line in enumerate(lines):
         matches = list(IMAGE_EMBED_RE.finditer(line))
         if not matches:
-            new_lines.append(line)
+            rewritten_line, markdown_changed = rewrite_markdown_images(
+                line,
+                note,
+                all_images,
+                by_name,
+            )
+            if markdown_changed:
+                changed = True
+                if len(preview_lines) < 3:
+                    preview_lines.append(rewritten_line)
+            new_lines.append(rewritten_line)
             continue
 
         replacements: list[str] = []
@@ -315,12 +430,22 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Write changes to disk instead of running in dry-run mode.",
     )
+    parser.add_argument(
+        "--path",
+        action="append",
+        dest="paths",
+        help="Limit scanned notes to a file or folder. May be passed more than once.",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    notes = markdown_notes()
+    try:
+        notes = markdown_notes(args.paths)
+    except ValueError as error:
+        print(f"error: {error}")
+        return 2
     images = image_files()
     by_name = build_image_index(images)
     results = [transform_note(note, images, by_name) for note in notes]

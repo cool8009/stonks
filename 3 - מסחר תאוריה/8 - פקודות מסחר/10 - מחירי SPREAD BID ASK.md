@@ -1,7 +1,7 @@
 ![מחירי SPREAD BID ASK](../images/Pasted%20image%2020260407175236.png)
-![Pasted image 20260408215021](../images/Pasted%20image%2020260408215015.png)
-![Pasted image 20260408215015](../images/Pasted%20image%2020260408215021.png)
-![Pasted image 20260408215021](../images/Pasted%20image%2020260408215130.png)
+![Pasted image 20260408215015](../images/Pasted%20image%2020260408215015.png)
+![Pasted image 20260408215021](../images/Pasted%20image%2020260408215021.png)
+![Pasted image 20260408215130](../images/Pasted%20image%2020260408215130.png)
 - איפה שהעכבר זה הספרד ביד ואסק
 
 ## קישורים פנימיים

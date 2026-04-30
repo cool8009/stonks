@@ -8,31 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c78084d143730932",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "3 - מסחר תאוריה/images/Pasted image 20260105222411.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260105222411"
-            }
-          },
-          {
             "id": "ce8f44efe512761c",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "3 - מסחר תאוריה/images/Pasted image 20260430111409.png"
+                "file": "3 - מסחר תאוריה/12 - סיכומים/00 - מפת סיכומים.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260430111409"
+              "icon": "lucide-file",
+              "title": "00 - מפת סיכומים"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -196,8 +185,11 @@
   },
   "active": "fa161bab9b051a92",
   "lastOpenFiles": [
-    "3 - מסחר תאוריה/12 - סיכומים/3 - יצירת התראות.md",
+    "guide.md",
+    "3 - מסחר תאוריה/images/Pasted image 20260105222411.png",
+    "3 - מסחר תאוריה/12 - סיכומים/00 - מפת סיכומים.md",
     "3 - מסחר תאוריה/images/Pasted image 20260430111409.png",
+    "3 - מסחר תאוריה/12 - סיכומים/3 - יצירת התראות.md",
     "3 - מסחר תאוריה/images/Pasted image 20260430111316.png",
     "3 - מסחר תאוריה/images/Pasted image 20260430111303.png",
     "3 - מסחר תאוריה/12 - סיכומים/2 - זמן מסך של סוחר.md",
@@ -217,7 +209,6 @@
     "3 - מסחר תאוריה/images/Pasted image 20260430105759.png",
     "3 - מסחר תאוריה/images/Pasted image 20260430105549.png",
     "3 - מסחר תאוריה/00 - מפת מסחר תאוריה.md",
-    "3 - מסחר תאוריה/images/Pasted image 20260430102650.png",
     "3 - מסחר תאוריה/11 - ניהול רווחים/6 - יחידות סיכון על הגרף.md",
     "3 - מסחר תאוריה/11 - ניהול רווחים/5 - סטטיסטיקה של סוחר.md",
     "3 - מסחר תאוריה/11 - ניהול רווחים/4 - הפתגם הידוע.md",
@@ -235,7 +226,6 @@
     "3 - מסחר תאוריה/9 - ניהול סיכונים/2 - הנוסחה.md",
     "3 - מסחר תאוריה/10 - כניסה לעסקה",
     "3 - מסחר תאוריה/Untitled.canvas",
-    "3 - מסחר תאוריה/9 - ניהול סיכונים/4 - גודל הסטופ.md",
     "3 - מסחר תאוריה/9 - ניהול סיכונים",
     "scripts/__pycache__/build_internal_navigation.cpython-311.pyc",
     "scripts/__pycache__/migrate_local_image_embeds.cpython-311.pyc",

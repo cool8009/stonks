@@ -1,0 +1,10 @@
+# Obsidian local state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspaces.json
+.obsidian/workspaces-mobile.json
+.obsidian/cache/
+.obsidian/logs/
+
+# Obsidian deleted files
+.trash/
