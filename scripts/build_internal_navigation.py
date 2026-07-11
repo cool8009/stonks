@@ -95,7 +95,12 @@ def markdown_notes() -> list[Path]:
         (
             path
             for path in REPO_ROOT.rglob("*.md")
-            if path.is_file() and in_scope(path)
+            # Root-level Markdown files are standalone guides/reports, not
+            # numbered course sections. Treating one as a section makes the
+            # script generate impossible paths such as guide.md/00 - map.md.
+            if path.is_file()
+            and len(path.relative_to(REPO_ROOT).parts) > 1
+            and in_scope(path)
         ),
         key=lambda path: path.relative_to(REPO_ROOT).as_posix(),
     )
